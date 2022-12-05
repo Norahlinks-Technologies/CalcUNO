@@ -94,8 +94,9 @@ long doAddition()
 {
     int answer;
     int16_t getValue;
-    lcd.clear();
     lcd.setCursor(1, 15);
+    char getchoice();
+    
     for (size_t v { }; v < 17; v++)
     {
       getValue = uint16_t (keyPressed);
