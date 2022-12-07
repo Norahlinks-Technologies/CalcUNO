@@ -3,10 +3,23 @@
 #include "calculator.h"
 
 
+_startkeypad smartPad (keChar, rowPins, colPins, nb_);
+LiquidCrystal lcd (4, 5, 6, 7, 8, 9);
+char keyChar [4][4]
+{
+    {'1','2','3','A'},
+    {'4','5','6','B'},
+    {'7','8','9','C'},
+    {'*','0','#','D'}
+
+};
+
+char keyPressed = smartPad.getKey();
+
+
 char getchoice()
 {
     char choice = '\0';
-    char keyPressed = smartPad.getkey();
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("1.ADD   2.SUB");
@@ -52,7 +65,7 @@ int doArithmetics(const char &choice)
 
 char &checkOperator()
 {
-   static char _operator = smartpad.getkey();
+   static char _operator = smartPad.getKey();
 
     switch (_operator)
     {
